@@ -1,0 +1,116 @@
+<html>
+
+<head>
+  <title>Manage Data</title>
+  <meta charset="UTF-8">
+
+  <!-- Font Awesome: https://use.fontawesome.com/releases/v5.8.2/css/all.css -->
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+
+  <!--
+      https://projects.lukehaas.me/css-loaders/ 
+      https://loading.io/css/
+  -->
+
+  <style>
+    ul {
+      padding-left: 0;
+      list-style: none;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+    }
+
+    ul li {
+      flex: 1 100%;
+      margin-right: 5px;
+      flex-flow: row wrap;
+    }
+
+    ul li span {
+      font-size: 14px;
+      margin-top: 6px;
+      opacity: .75;
+      padding-right: 10px;
+      padding-left: 5px;
+    }
+
+    ul input {
+      width: 100%;
+    }
+
+    .remove {
+      flex: 6%;
+      color: red;
+      padding-top: 18px;
+    }
+
+    h1.text-center {
+      margin-top: .5rem;
+    }
+
+    #spinnerSave {
+      display: none;
+    }
+
+    .slider {
+      overflow: hidden;
+      max-height: 500px;
+      /* approximate max height */
+      transition-property: all;
+      transition-duration: .5s;
+      transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    }
+
+    .slider.closed {
+      max-height: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="bd-masthead" id="content" role="main">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 mx-auto col-md-12">
+          <h1 class="text-center" title="Example: (https?)://intranet/(.*) to $1://intranet.gob.ar/$2">URL Redirection</h1>
+          <div class="savedef">
+            <div class="d-flex align-items-center">
+              <button id="saveDefault" class="btn btn-warning">Default data</button>
+              <div class="slider" id="slider">
+                <div id="spinnerSave" class="spinner-border text-primary" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-12 mx-auto col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Manage data</h4>
+
+              <div id="dataPatterns"></div>
+              <div>
+                <button id="addRow" class="btn btn-primary">Add</button>
+                <button id="saveOptions" class="btn btn-raised btn-success">Update</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+<script type="text/javascript" src="helper.js"></script>
+<script type="text/javascript" src="options.js"></script>
+
+</html>
